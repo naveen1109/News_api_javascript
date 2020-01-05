@@ -26,6 +26,5 @@ fetch(req).then(function(response) {
         news_desc.innerHTML = news[i].description
 
 
-
     }
 });
