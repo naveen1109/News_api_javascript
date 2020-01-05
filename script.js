@@ -9,10 +9,22 @@ fetch(req).then(function(response) {
     // console.log(news);
     for (var i = 0; i < news.length; i++) {
         var news_head = document.createElement("h3");
-        	news_head.id="heading"
-        console.log(news[i].title)
-        document.getElementById("title").appendChild(news_head)
-     	news_head.innerHTML=news[i].title
+        var news_image = document.createElement("IMG");
+        var news_desc = document.createElement("p")
+        var news_card = document.createElement("div")
+        news_card.className = "w3-panel w3-card-4"
+        news_image.setAttribute("src", news[i].urlToImage);
+        news_image.setAttribute("width", "304");
+        news_image.setAttribute("height", "228");
+        news_image.setAttribute("alt", "The Pulpit Rock");
+        console.log(news[i])
+        news_card.appendChild(news_head)
+        news_card.appendChild(news_image);
+        news_card.appendChild(news_desc);
+        document.getElementById("title").appendChild(news_card)
+        news_head.innerHTML = news[i].title
+        news_desc.innerHTML = news[i].description
+
 
 
     }
